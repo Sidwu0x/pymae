@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Canvas de Arquitectura Empresarial para PYMES</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-black text-gray-900 mb-2">Visualizando el Futuro de tu PYME</h1>
+            <p class="text-xl md:text-2xl text-[#F56F00] font-bold">El Canvas de Arquitectura Empresarial en Acción</p>
+        </header>
+
+        <main class="space-y-12">
+            
+            <section class="bg-white rounded-lg shadow-md p-6 md:p-8 text-center">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">¿Qué es el Canvas de Arquitectura Empresarial (AE)?</h2>
+                <p class="max-w-3xl mx-auto text-gray-600 mb-6">Es una herramienta visual y estratégica diseñada para PYMES. Te ayuda a mapear y conectar todas las piezas de tu negocio (estrategia, datos, software y tecnología) en una sola página, permitiéndote tomar decisiones más inteligentes y alinear tus inversiones tecnológicas con tus verdaderos objetivos de crecimiento.</p>
+                <div class="bg-[#00A6A6] text-white rounded-lg p-6 max-w-md mx-auto">
+                    <p class="text-lg">Alinea el</p>
+                    <p class="text-7xl font-black">100%</p>
+                    <p class="text-lg">de tu tecnología con tu estrategia de negocio.</p>
+                </div>
+            </section>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">1. Dominio de Negocio: La Estrategia</h3>
+                    <p class="text-gray-600 mb-6">El punto de partida es siempre tu negocio. Antes de hablar de tecnología, debemos tener claros los objetivos, los procesos que los hacen posibles y las personas a las que servimos. Esta es tu estrella polar.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-4">🎯</span>
+                            <div>
+                                <h4 class="font-bold">Objetivos Estratégicos</h4>
+                                <p class="text-gray-600 text-sm">Ej: Aumentar cuota de mercado un 15%.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-2xl mr-4">🔄</span>
+                            <div>
+                                <h4 class="font-bold">Procesos Clave</h4>
+                                <p class="text-gray-600 text-sm">Ej: Proceso de venta y logística.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                             <span class="text-2xl mr-4">👥</span>
+                            <div>
+                                <h4 class="font-bold">Participantes Clave</h4>
+                                <p class="text-gray-600 text-sm">Ej: Clientes B2B y proveedores estratégicos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">2. Dominio de Datos: La Información</h3>
+                    <p class="text-gray-600 mb-4">Los datos son el activo invisible que impulsa las decisiones. Identificar de dónde vienen tus datos críticos es el primer paso para aprovecharlos. Una PYME típica puede tener un panorama de fuentes de datos fragmentado.</p>
+                    <div class="chart-container">
+                        <canvas id="dataSourcesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                 <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">3. Dominio de Aplicaciones: El Software</h3>
+                    <p class="text-gray-600 mb-4">Visualiza tu ecosistema de software actual y compáralo con el que necesitas para alcanzar tus objetivos. El canvas te ayuda a identificar redundancias y carencias críticas en tus herramientas digitales.</p>
+                     <div class="chart-container h-96 md:h-[450px]">
+                        <canvas id="applicationsChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">4. Dominio de Tecnología: La Infraestructura</h3>
+                     <p class="text-gray-600 mb-6">La tecnología es la base que soporta todo lo demás. Entender cómo se conectan tus servidores, la nube y los dispositivos de los usuarios es fundamental para garantizar la seguridad, la escalabilidad y el rendimiento.</p>
+                     <div class="space-y-4 text-center">
+                        <div class="bg-gray-200 p-3 rounded-lg inline-block">
+                            <p class="font-bold">Infraestructura Central</p>
+                            <p class="text-sm">(Servidores, Cloud, Redes)</p>
+                        </div>
+                        <div class="flex justify-center">
+                            <div class="w-0.5 h-8 bg-[#F56F00]"></div>
+                        </div>
+                        <div class="bg-orange-100 border-2 border-dashed border-[#F56F00] p-3 rounded-lg inline-block">
+                            <p class="font-bold">Capa de Seguridad</p>
+                            <p class="text-sm">(Firewall, Antivirus, Backups)</p>
+                        </div>
+                        <div class="flex justify-center">
+                            <div class="w-0.5 h-8 bg-[#00A6A6]"></div>
+                        </div>
+                        <div class="bg-teal-100 p-3 rounded-lg inline-block">
+                           <p class="font-bold">Dispositivos de Usuario</p>
+                           <p class="text-sm">(PCs, Portátiles, Móviles)</p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+
+            <section class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-2xl text-center font-bold text-gray-900 mb-4">Conclusión: De los Problemas a las Prioridades</h2>
+                <p class="max-w-3xl mx-auto text-center text-gray-600 mb-6">Al completar los cuatro dominios, el canvas revela una "radiografía" de tu empresa. El siguiente gráfico muestra un diagnóstico de ejemplo, evidenciando fortalezas y debilidades. Áreas con menor puntuación, como "Integración de Apps" y "Seguridad", se convierten en prioridades claras de inversión.</p>
+                 <div class="chart-container">
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-2xl text-center font-bold text-gray-900 mb-4">Asistente AE con IA ✨</h2>
+                <p class="max-w-3xl mx-auto text-center text-gray-600 mb-6">¿Tienes preguntas sobre algún concepto de Arquitectura Empresarial o sobre cómo aplicar el canvas? Pregunta a nuestro asistente de IA para obtener una explicación clara y concisa.</p>
+                <div class="max-w-xl mx-auto">
+                    <textarea id="questionInput" class="w-full h-24 p-4 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F56F00] mb-4" placeholder="Ej: ¿Qué es la integración de datos?"></textarea>
+                    <button id="askButton" class="w-full bg-[#E2A000] text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-600 transition-colors">Generar Respuesta ✨</button>
+                    <div id="aiResponse" class="mt-6 bg-gray-100 p-4 rounded-lg min-h-[5rem] text-gray-700"></div>
+                </div>
+            </section>
+            
+            <section class="bg-gray-800 text-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-3xl text-center font-bold mb-6">Tu Plan de Acción Concreto</h2>
+                <div class="max-w-2xl mx-auto">
+                    <p class="text-center text-gray-300 mb-4">Haz clic en el botón para generar un plan de acción personalizado basado en los principios de este canvas.</p>
+                    <button id="generatePlanButton" class="w-full bg-[#E2A000] text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-600 transition-colors mb-6">Generar Plan con IA ✨</button>
+                    <div id="actionPlanOutput" class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="bg-[#E2A000] text-gray-900 font-bold rounded-full h-8 w-8 flex items-center justify-center mr-4">1</span>
+                            <div>
+                                <h4 class="font-bold">Identificar Puntos de Dolor</h4>
+                                <p class="text-gray-300">Enumera los principales desafíos revelados en el canvas. Ej: "Los datos de ventas no están centralizados".</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-[#E2A000] text-gray-900 font-bold rounded-full h-8 w-8 flex items-center justify-center mr-4">2</span>
+                            <div>
+                                <h4 class="font-bold">Definir Oportunidades de Mejora</h4>
+                                <p class="text-gray-300">Convierte los problemas en oportunidades claras. Ej: "Implementar un CRM para unificar datos de clientes".</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-[#E2A000] text-gray-900 font-bold rounded-full h-8 w-8 flex items-center justify-center mr-4">3</span>
+                            <div>
+                                <h4 class="font-bold">Priorizar y Ejecutar</h4>
+                                <p class="text-gray-300">Elige el primer paso que genere mayor impacto con el menor esfuerzo. ¡Empieza pequeño y demuestra el valor!</p>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const FONT_COLOR = '#374151';
+            const GRID_COLOR = '#E5E7EB';
+
+            const PALETTE = {
+                teal: '#00A6A6',
+                yellow: '#E2A000',
+                orange: '#F56F00',
+                redDark: '#C44521',
+                redDeep: '#A12B1B'
+            };
+
+            function wrapLabel(str, maxWidth) {
+                if (str.length <= maxWidth) {
+                    return str;
+                }
+                const words = str.split(' ');
+                let lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            }
+            
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+
+            const defaultOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: FONT_COLOR,
+                            font: {
+                                family: "'Inter', sans-serif"
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                           title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: FONT_COLOR },
+                        grid: { color: GRID_COLOR }
+                    },
+                    y: {
+                        ticks: { color: FONT_COLOR },
+                        grid: { color: GRID_COLOR },
+                        beginAtZero: true
+                    }
+                }
+            };
+            
+            const dataSourcesCtx = document.getElementById('dataSourcesChart');
+            if(dataSourcesCtx) {
+                new Chart(dataSourcesCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Hojas de Cálculo', 'Software Contable', 'CRM Básico', 'Formularios Web'],
+                        datasets: [{
+                            label: 'Fuentes de Datos',
+                            data: [45, 25, 20, 10],
+                            backgroundColor: [PALETTE.redDark, PALETTE.orange, PALETTE.yellow, PALETTE.teal],
+                            borderColor: '#FFFFFF',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    color: FONT_COLOR,
+                                    font: { family: "'Inter', sans-serif" }
+                                }
+                            },
+                             tooltip: {
+                                callbacks: {
+                                   title: tooltipTitleCallback
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Distribución de Fuentes de Datos Críticos',
+                                color: FONT_COLOR,
+                                font: { size: 16, family: "'Inter', sans-serif" }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const applicationsCtx = document.getElementById('applicationsChart');
+            if(applicationsCtx) {
+                 new Chart(applicationsCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Portfolio Actual', 'Portfolio Futuro Deseado'],
+                        datasets: [
+                            {
+                                label: 'Operaciones',
+                                data: [3, 4],
+                                backgroundColor: PALETTE.teal,
+                            },
+                            {
+                                label: 'Ventas y Marketing',
+                                data: [2, 5],
+                                backgroundColor: PALETTE.orange,
+                            },
+                            {
+                                label: 'Administración',
+                                data: [4, 3],
+                                backgroundColor: PALETTE.redDark,
+                            }
+                        ]
+                    },
+                    options: {
+                        ...defaultOptions,
+                        scales: {
+                            x: { stacked: true, ticks: { color: FONT_COLOR }, grid: { display: false } },
+                            y: { stacked: true, ticks: { color: FONT_COLOR }, grid: { color: GRID_COLOR } }
+                        },
+                         plugins: {
+                            ...defaultOptions.plugins,
+                            title: {
+                                display: true,
+                                text: 'Composición del Portfolio de Aplicaciones',
+                                color: FONT_COLOR,
+                                font: { size: 16, family: "'Inter', sans-serif" }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const radarCtx = document.getElementById('radarChart');
+            if (radarCtx) {
+                const originalLabels = [
+                    'Alineación Estratégica con Tecnología', 
+                    'Seguridad de la Información', 
+                    'Disponibilidad de Datos para Decisiones', 
+                    'Integración de Aplicaciones Clave', 
+                    'Escalabilidad de Infraestructura'
+                ];
+
+                const processedLabels = originalLabels.map(label => wrapLabel(label, 16));
+
+                new Chart(radarCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: processedLabels,
+                        datasets: [{
+                            label: 'Nivel de Madurez Actual',
+                            data: [8, 4, 5, 3, 6],
+                            fill: true,
+                            backgroundColor: 'rgba(245, 111, 0, 0.2)',
+                            borderColor: PALETTE.orange,
+                            pointBackgroundColor: PALETTE.orange,
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: PALETTE.orange
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                             tooltip: {
+                                callbacks: {
+                                   title: tooltipTitleCallback
+                                }
+                            },
+                            legend: {
+                                 position: 'bottom',
+                                labels: { color: FONT_COLOR, font: { family: "'Inter', sans-serif" } }
+                            }
+                        },
+                        scales: {
+                            r: {
+                                beginAtZero: true,
+                                max: 10,
+                                grid: { color: GRID_COLOR },
+                                pointLabels: {
+                                    color: FONT_COLOR,
+                                    font: { size: 12, family: "'Inter', sans-serif" }
+                                },
+                                ticks: {
+                                    backdropColor: 'rgba(255, 255, 255, 0.75)',
+                                    color: FONT_COLOR,
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            const askButton = document.getElementById('askButton');
+            const questionInput = document.getElementById('questionInput');
+            const aiResponse = document.getElementById('aiResponse');
+            const generatePlanButton = document.getElementById('generatePlanButton');
+            const actionPlanOutput = document.getElementById('actionPlanOutput');
+
+            const API_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent';
+            const API_KEY = "";
+
+            const fetchWithBackoff = async (url, options, retries = 3) => {
+                for (let i = 0; i < retries; i++) {
+                    try {
+                        const response = await fetch(url, options);
+                        if (response.status === 429) {
+                            if (i < retries - 1) {
+                                await new Promise(resolve => setTimeout(resolve, Math.pow(2, i) * 1000));
+                                continue;
+                            }
+                        }
+                        return response;
+                    } catch (error) {
+                        if (i < retries - 1) {
+                            await new Promise(resolve => setTimeout(resolve, Math.pow(2, i) * 1000));
+                            continue;
+                        }
+                        throw error;
+                    }
+                }
+            };
+
+            const generateContent = async (prompt) => {
+                const payload = {
+                    contents: [{ parts: [{ text: prompt }] }]
+                };
+                const response = await fetchWithBackoff(`${API_ENDPOINT}?key=${API_KEY}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                if (result.candidates && result.candidates.length > 0) {
+                    return result.candidates[0].content.parts[0].text;
+                }
+                throw new Error('No content generated from API.');
+            };
+
+            if (askButton) {
+                askButton.addEventListener('click', async () => {
+                    const question = questionInput.value.trim();
+                    if (question === '') {
+                        aiResponse.innerHTML = 'Por favor, introduce tu pregunta.';
+                        return;
+                    }
+                    aiResponse.innerHTML = '<span class="animate-pulse">Generando respuesta...</span>';
+                    try {
+                        const prompt = `Actúa como un profesor experto en Arquitectura Empresarial para PYMES. Explica de manera concisa y práctica la siguiente pregunta: "${question}"`;
+                        const responseText = await generateContent(prompt);
+                        aiResponse.innerText = responseText;
+                    } catch (error) {
+                        aiResponse.innerText = 'Error al generar la respuesta. Por favor, inténtalo de nuevo más tarde.';
+                    }
+                });
+            }
+
+            if (generatePlanButton) {
+                generatePlanButton.addEventListener('click', async () => {
+                    actionPlanOutput.innerHTML = '<div class="text-center text-white animate-pulse">Generando plan de acción...</div>';
+                    try {
+                        const prompt = 'Actúa como un consultor de Arquitectura Empresarial para PYMES. Genera un plan de acción de 3 pasos para una PYME que quiere mejorar su arquitectura de negocio. Incluye títulos, descripciones concisas y un ejemplo para cada paso. Responde en formato de lista HTML (`<ul>` y `<li>`).';
+                        const responseText = await generateContent(prompt);
+                        actionPlanOutput.innerHTML = responseText;
+                    } catch (error) {
+                        actionPlanOutput.innerHTML = '<div class="text-center text-red-400">Error al generar el plan. Por favor, inténtalo de nuevo más tarde.</div>';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
